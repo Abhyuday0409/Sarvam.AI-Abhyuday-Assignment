@@ -2,11 +2,13 @@
 
 ## Project Overview
 This project is an AI-powered question-answering system that uses RAG (Retrieval-Augmented Generation) to provide accurate answers. It also includes a text-to-speech feature to deliver audio responses.
+```
 1.) using llm for response"\n"
 2.) tasken care of non question queries"\n"
 3.) Used audio API for bonus points
 4.) Did optimizations like usign faiss instead of Chroma db for precenting dying kernel, avoided llm call for lower latency for 2nd part using regex
 5.)Have used Google Gemini API, but have MISTRAL folder and ran it on kaggle for showcASING THAT i CAN WORK WITH LOCAL LLMS AS WELL.
+```
 ## Demo
 [Click here to watch the demo video](./Working%20prototype.mkv)
 
