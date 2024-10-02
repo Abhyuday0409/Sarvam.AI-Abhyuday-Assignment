@@ -19,7 +19,7 @@ templates = Jinja2Templates(directory="templates")
 url = "https://api.sarvam.ai/text-to-speech"
 headers = {
     "Content-Type": "application/json",
-    "API-Subscription-Key": "101e1efb-e49a-46b6-b886-f8e32c0e5ec0"  # Add your Sarvam API key
+    "API-Subscription-Key": "Sarvam-API"  # Add your Sarvam API key
 }
 
 @app.get("/", response_class=HTMLResponse)
@@ -60,7 +60,6 @@ async def ask(request: Request, question: str = Form(...)):
         audio = res.get("audios")
         if audio:
             audio_bytes = base64.b64decode(audio[0])
-            # Make a directory to save the audio file in static
             save_dir = os.path.join('static', 'response.wav')
             with open(save_dir, "wb") as f:
                 f.write(audio_bytes)

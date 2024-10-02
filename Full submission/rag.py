@@ -21,7 +21,7 @@ def prepare_vector_index(documents):
     context = "\n\n".join(str(doc.page_content) for doc in documents)
     texts = text_splitter.split_text(context)
 
-    embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key="AIzaSyC7Hc7qO-4nea72gpzaNqmblkBsbNI7fRQ")
+    embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key="GOOGLE-API-KEY")
     vector_index = FAISS.from_texts(texts, embeddings)  # Use FAISS for the vector index
     return vector_index.as_retriever(search_kwargs={"k": 2})
 
