@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .question {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+        .answer {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f4f8;
+            border-radius: 4px;
+        }
+        audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .back-link:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Question and Answer</h1>
+        <div class="question">
+            <h2>Question:</h2>
+            <p>{{ question }}</p>
+        </div>
+        <div class="answer">
+            <h2>Answer:</h2>
+            <p>{{ answer }}</p>
+        </div>
+    </div>
+    
+    {% if audio_url %}
+    <div class="content">
+        <h2>Audio Response:</h2>
+        <audio controls>
+            <source src="{{ audio_url }}" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    {% endif %}
+    
+    <a href="/" class="back-link">Ask another question</a>
+</body>
+</html>
