@@ -87,12 +87,6 @@ The `main.py` file sets up a FastAPI application to handle web requests and serv
 ### Text-to-Speech
 We use the Sarvam AI API for text-to-speech conversion. The audio response is generated and saved as a .wav file.
 
-## Testing
-
-To run the tests:
-```
-python test.py
-```
 
 ## Contact
 
